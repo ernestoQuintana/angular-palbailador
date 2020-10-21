@@ -21,6 +21,7 @@ export class ProductsListComponent implements OnInit {
       stock: 4,
       imagen: "assets/img/ribens.jpg",
       clearance: false,
+      quantity: 0,
     },
     {
       nombre: "Mario",
@@ -30,6 +31,7 @@ export class ProductsListComponent implements OnInit {
       stock: 3,
       imagen: "assets/img/ribens.jpg",
       clearance: false,
+      quantity:0,
     },
     {
       nombre: "Duqueza",
@@ -39,6 +41,7 @@ export class ProductsListComponent implements OnInit {
       stock: 2,
       imagen: "assets/img/ribens.jpg",
       clearance: false,
+      quantity: 0,
     },
     {
       nombre: "Legacy",
@@ -48,9 +51,21 @@ export class ProductsListComponent implements OnInit {
       stock: 0,
       imagen: "assets/img/ribens.jpg",
       clearance: true,
+      quantity:0,
     }
   ]
   ngOnInit(): void {
   }
+upQuantity(product: Product): void{
+  if(product.quantity < product.stock)
+  product.quantity++;
+}
+downQuantity(product: Product): void{
+  if(product.quantity>0)
+  product.quantity--;
+}
+ChangeQuantity(event, product: Product): void {
+  console.log(event.key);
+}
 
 }

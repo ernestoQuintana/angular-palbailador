@@ -1,23 +1,33 @@
 <h1>Lista de Productos</h1>
 <table class="table">
-    <thead>
-        <tr>
-            <th>Producto</th>
-            <th>Tipo</th>
-            <th>Talle</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Imagen</th>           
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products" [ngClass]="{'clearance':product.clearance}"> 
-            <td>{{product.nombre}}</td>
-            <td>{{product.tipo}}</td>
-            <td>{{product.talle}}</td>
-            <td>{{product.precio | currency}}</td>
-            <td><span class="badge badge-warning" *ngIf="product.stock==0">SIN STOCK</span></td>
-            <td><img [src]="product.imagen" [alt]="product.nombre"></td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Tipo</th>
+      <th>Talle</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Imagen</th>
+      <th>Compras</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let product of products"
+      [ngClass]="{ clearance: product.clearance }"
+    >
+      <td>{{ product.nombre }}</td>
+      <td>{{ product.tipo }}</td>
+      <td>{{ product.talle }}</td>
+      <td>{{ product.precio | currency }}</td>
+      <td>
+        <span class="badge badge-warning" *ngIf="product.stock == 0">SIN STOCK</span>
+      </td>
+      <td><img width="150" class="img-thumbnail" [src]="product.imagen" [alt]="product.nombre" /></td>
+      <td><button class="btn btn-dark btn-sm" (click)="downQuantity(product)" >-</button>
+        <input type="text" [(ngModel)]="product.quantity" (keyup)='ChangeQuantity($event, product)'>
+        <button class="btn btn-dark btn-sm" (click)="upQuantity(product)">+</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
