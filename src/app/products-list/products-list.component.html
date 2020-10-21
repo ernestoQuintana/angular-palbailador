@@ -2,44 +2,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Imagen</th>
             <th>Producto</th>
             <th>Tipo</th>
             <th>Talle</th>
             <th>Precio</th>
             <th>Stock</th>
-            
+            <th>Imagen</th>           
         </tr>
     </thead>
     <tbody>
-        <tr> 
-            <td><img [src]="product.imagen" [alt]="product.nombre"></td>
+        <tr *ngFor="let product of products" [ngClass]="{'clearance':product.clearance}"> 
             <td>{{product.nombre}}</td>
             <td>{{product.tipo}}</td>
             <td>{{product.talle}}</td>
-            <td>{{product.precio}}</td>
-            <td>{{product.stock}}</td>
-        </tr>
-        <tr>
-            <td>Mario</td>
-            <td>Zapatos Hombre</td>
-            <td>40</td>
-            <td>2200</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Duqueza</td>
-            <td>Zapatos Femenino</td>
-            <td>37</td>
-            <td>1800</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>Legacy</td>
-            <td>Camisas</td>
-            <td>XL</td>
-            <td>2000</td>
-            <td>4</td>
+            <td>{{product.precio | currency}}</td>
+            <td><span class="badge badge-warning" *ngIf="product.stock==0">SIN STOCK</span></td>
+            <td><img [src]="product.imagen" [alt]="product.nombre"></td>
         </tr>
     </tbody>
 </table>
