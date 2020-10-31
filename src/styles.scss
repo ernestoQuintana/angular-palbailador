@@ -2,3 +2,14 @@
 h1{
     color: blue;
 }
+td{
+    vertical-align: middle;
+}
+
+footer {
+    background-color: rgb(24, 23, 23);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+  }
