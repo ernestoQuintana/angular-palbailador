@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PalBailadorAboutComponent } from './pal-bailador-about/pal-bailador-about.component';
+import { PalBailadorProductsComponent } from './pal-bailador-products/pal-bailador-products.component';
 
-const routes: Routes = [];
+//aca van todos los ruteos de la aplicacion
+const routes: Routes = [
+  {
+    path : '',
+    redirectTo : 'products',
+    pathMatch: 'full',
+  },
+  {
+    path : 'products',
+    component: PalBailadorProductsComponent,
+  },
+  {
+    path : 'about',
+    component: PalBailadorAboutComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
