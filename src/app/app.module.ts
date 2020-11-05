@@ -12,6 +12,8 @@ import { PalBailadorProductsComponent } from './pal-bailador-products/pal-bailad
 import { PalBailadorHomeComponent } from './pal-bailador-home/pal-bailador-home.component';
 import { PalBailadorClassComponent } from './pal-bailador-class/pal-bailador-class.component';
 import { PalBailadorContactComponent } from './pal-bailador-contact/pal-bailador-contact.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PalBailadorContactComponent } from './pal-bailador-contact/pal-bailador
     PalBailadorProductsComponent,
     PalBailadorHomeComponent,
     PalBailadorClassComponent,
-    PalBailadorContactComponent
+    PalBailadorContactComponent,
+    InputIntegerComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

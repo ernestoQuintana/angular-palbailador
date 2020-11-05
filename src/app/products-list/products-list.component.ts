@@ -1,5 +1,5 @@
-import { Xliff } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { ProductCartService } from '../product-cart.service';
 import { Product } from './products';
 //incluimos otros archivos.
 
@@ -10,7 +10,10 @@ import { Product } from './products';
 })
 export class ProductsListComponent implements OnInit {
 
-  constructor() { }
+  //inyeccion de dependencia
+  constructor(private cart: ProductCartService) {
+   }
+
   //tipamos con Products
   products: Product[] = [
     {
@@ -52,20 +55,18 @@ export class ProductsListComponent implements OnInit {
       imagen: "assets/img/ribens.jpg",
       clearance: true,
       quantity:0,
-    }
-  ]
+    },
+  ];
   ngOnInit(): void {
   }
-upQuantity(product: Product): void{
-  if(product.quantity < product.stock)
-  product.quantity++;
-}
-downQuantity(product: Product): void{
-  if(product.quantity>0)
-  product.quantity--;
-}
-ChangeQuantity(event, product: Product): void {
-  console.log(event.key);
-}
+
+  addToCart(product):void {
+    this.cart.addToCart(product);
+    product.stock -= product.quantity;
+    product.quantity = 0;
+  }
+  maxReached(m: string){
+    console.log(m);
+  }
 
 }
