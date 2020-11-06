@@ -1,13 +1,38 @@
-.logo{
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.logo {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.logo img{
-    width: 20%;
+.logo img {
+  width: 20%;
 }
-.title{
-font-size: 1.6rem;
-margin-right: 0.4rem;
+@font-face{
+    font-family: "dancing";
+    src: url("/assets/fonts/dancing.ttf");
+}
+.title {
+  font-size: 2rem;
+  margin-right: 0.4rem;
+  font-family: dancing;
+}
+.title img {
+    width: 5%;
+}
+.audio {
+  width: 12%;
+  height: 30px;
+}
+
+.nav-link {
+  font-size: 1.4rem;
+  color: rgb(236, 236, 236);
+}
+.contenedor{
+    width: 100%;
+}
+footer {
+    clear: both;
+    position: relative;
+    text-align: center;
 }
