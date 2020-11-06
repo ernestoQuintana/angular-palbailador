@@ -1,9 +1,18 @@
-*{
- 
+h1{
+    color: black;
+    text-align: center;
+    margin-top: 5%;
 }
-.formulario{
+form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    margin: 4% 25%;
+    padding: 2em 2em;
+    width: 50%;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+}
+.btn-primary{
+    margin: 0 40%;
 }
