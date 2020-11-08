@@ -1,9 +1,9 @@
-<div class="">
-    <h4>Carrito de Compras</h4>
-<ul>
+<h2>Lista de Compras</h2>
+<div class="list-group">
+  <ul>
     <li *ngFor="let product of cartList$ | async">
-        {{product.nombre}}: {{product.quantity}}
+      {{ product.tipo }} {{ product.nombre | uppercase }} (
+      {{ product.quantity }} )
     </li>
-    <!--<button>confirmar Compra</button>-->
-</ul>
+  </ul>
 </div>

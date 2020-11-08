@@ -1,8 +1,8 @@
 
   <h1>Lista de Productos</h1>
 <table class="table">
-  <thead>
-    <tr class="table text-center">
+  <thead class="thead-dark">
+    <tr class="table-bordered text-center">
       <th>Producto</th>
       <th>Tipo</th>
       <th>Talle</th>
@@ -23,11 +23,14 @@
       <td>{{ product.talle }}</td>
       <td>{{ product.precio | currency }}</td>
       <td>
-        <span class="badge badge-warning" *ngIf="product.stock == 0">SIN STOCK</span>
+        <span class="badge badge-warning" *ngIf="product.stock == 0;else stock">SIN STOCK</span>
+        <ng-template #stock>{{product.stock}}</ng-template>
       </td>
-      <td><img width="150" class="img-thumbnail" [src]="product.imagen" [alt]="product.nombre" /></td>
+      <td><img width="150" class="img-thumbnail" [src]="product.imagen" 
+        [alt]="product.nombre" /></td>
       <td>
-        <app-input-integer [max]="product.stock" [(quantity)]="product.quantity" *ngIf="product.stock" (maxReached)="maxReached($event)"></app-input-integer>
+        <app-input-integer [max]="product.stock" [(quantity)]="product.quantity"
+        *ngIf="product.stock" (maxReached)="maxReached($event)"></app-input-integer>
       </td>
       <td>
         <button class="btn btn-primary" (click)="addToCart(product)">Comprar</button>
