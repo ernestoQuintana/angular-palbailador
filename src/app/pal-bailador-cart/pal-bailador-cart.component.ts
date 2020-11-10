@@ -11,11 +11,13 @@ import { Product } from '../products-list/products';
 export class PalBailadorCartComponent implements OnInit {
 
   cartList$: Observable<Product[]>;
+  //total$: Observable<number>;
   constructor(private cart: ProductCartService) {
     this.cartList$ = cart.cartList.asObservable();
+    //this.total$ = cart.total.asObservable();
   }
 
   ngOnInit(): void {
-  }
+  } 
 
 }

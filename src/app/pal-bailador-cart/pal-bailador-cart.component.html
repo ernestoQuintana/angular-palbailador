@@ -1,9 +1,14 @@
 <h2>Lista de Compras</h2>
-<div class="list-group">
+<div class="listGroup">
+  <div>
   <ul>
     <li *ngFor="let product of cartList$ | async">
       {{ product.tipo }} {{ product.nombre | uppercase }} (
-      {{ product.quantity }} )
+      {{ product.quantity }} ) - {{product.precio * product.quantity | currency}}
     </li>
   </ul>
+</div>
+  <div class="precio-total">
+   <!-- <h3>Total : {{total$ | currency | async}}</h3>-->
+  </div>
 </div>
